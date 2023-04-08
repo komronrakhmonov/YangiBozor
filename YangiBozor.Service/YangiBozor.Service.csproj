@@ -6,4 +6,8 @@
     <Nullable>disable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\YangiBozor.Domain\YangiBozor.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
