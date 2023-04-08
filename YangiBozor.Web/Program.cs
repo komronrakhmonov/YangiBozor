@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using YangiBozor.Data.DbContexts;
-
+using YangiBozor.Data.IRepositories;
+using YangiBozor.Data.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<YangiBozorDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 var app = builder.Build();
 
