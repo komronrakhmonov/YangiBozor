@@ -17,35 +17,34 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : Auditabl
         this.dbSet = dbContext.Set<TEntity>();  
     }
 
-    public async Task<TEntity> DeleteAsync(Expression<Func<TEntity, bool>> predicate)
+    public async Task<bool> DeleteAsync(Expression<Func<TEntity, bool>> predicate)
     {
         var entity = await dbSet.FirstOrDefaultAsync(predicate);
-        if (entity == null) 
-            return null
+        if (entity == null)
+            return false;
+        dbSet.Remove(entity);
+        return true;
     }
 
-    public Task<TEntity> InsertAsync(TEntity entity)
+    public async Task<TEntity> InsertAsync(TEntity entity)
     {
-        throw new NotImplementedException();
+        var entry = await dbSet.AddAsync(entity);
+        return entry.Entity;
     }
 
-    public Task<bool> SaveAsync()
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<bool> SaveAsync() =>
+        await dbContext.SaveChangesAsync() > 0;
 
-    public IQueryable<TEntity> SelectAllAsync()
-    {
-        throw new NotImplementedException();
-    }
 
-    public Task<TEntity> SelectAsync(Expression<Func<TEntity, bool>> predicate)
-    {
-        throw new NotImplementedException();
-    }
+    public IQueryable<TEntity> SelectAllAsync() =>
+        dbSet;
 
-    public Task<TEntity> UpdateAsync(TEntity entity)
+    public async Task<TEntity> SelectAsync(Expression<Func<TEntity, bool>> predicate) =>
+        await dbSet.FirstOrDefaultAsync(predicate);
+
+    public async Task<TEntity> UpdateAsync(TEntity entity)
     {
-        throw new NotImplementedException();
+        var entry = dbSet.Update(entity);
+        return entry.Entity;
     }
 }
