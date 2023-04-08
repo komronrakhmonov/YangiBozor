@@ -1,6 +1,8 @@
-﻿namespace YangiBozor.Service.DTOs;
+﻿using YangiBozor.Domain.Enums;
 
-public class OrderForCreationDto
+namespace YangiBozor.Service.DTOs.OrderDto;
+
+public class OrderForResultDto : Auditable
 {
     public long UserId { get; set; }
     public User User { get; set; }
