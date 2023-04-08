@@ -1,4 +1,4 @@
-﻿namespace YangiBozor.Service.DTOs;
+﻿namespace YangiBozor.Service.DTOs.CardDto;
 
 public class CardForCreationDto
 {
