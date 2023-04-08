@@ -1,10 +1,12 @@
 ﻿using YangiBozor.Domain.Comons;
+using YangiBozor.Domain.Enums;
 
 namespace YangiBozor.Domain.Entities;
 
-public class Cart : Auditable
+public class ChatBox : Auditable
 {
     public long UserId { get; set; }
     public User User { get; set; }
-    public ICollection<Product> Products { get; set; }
+    public string Content { get; set; }
+    public MesseageType Type { get; set; }
 }
