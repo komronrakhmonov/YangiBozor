@@ -55,9 +55,9 @@ Write code*@
                                 @Html.DisplayFor(modelItem => item.Password)
                             </td>*@
                             <td class="align-middle">
-                                <a class="btn btn-outline-primary text-black"> <i class="bi bi-pencil-square"></i>Edit </a>
-                                <a class="btn btn-outline-info text-black"> <i class="bi bi-eye"></i>Details </a>
-                                <a class="btn btn-outline-danger text-black"> <i class="bi bi-trash"></i>Delete </a>
+                                    <a class="btn btn-outline-primary text-black"> asp-action ="Edit" aspnet-route-UserName = "@Model.UserName"<i class="bi bi-pencil-square"></i>Edit </a>
+                                <a class="btn btn-outline-info text-black"> asp-action="Details" aspnet-route-UserName = "@Model.UserName"<i class="bi bi-eye"></i>Details </a>
+                                    <a class="btn btn-outline-danger text-black">asp-action ="Delete" aspnet-route-UserName ="@Model.UserName" <i class="bi bi-trash"></i>Delete </a>
                             </td>
 
                         </tr>

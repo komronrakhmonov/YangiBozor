@@ -8,33 +8,31 @@
 <div class="row text"
     <div class="col-md-8 offset-2">
         <p>
-            <h1>Add a new User</h1>
+            <h1>Details of @Model.FirstName @Model.LastName</h1>
         </p>
         <div class="row">
              <div class="col-md-8 offset-2">
-                 <form asp-action="Create">
-                    <div asp-validation-summary="ModelOnly" class = "text-danger"></div>
                     <div class=" form-group text-center">
                      <img id="ProfilePicturePreview" />
                  </div>
                  <div class="form-group">
                     <label asp-for="ProfilePictureUrl" class="control-label"> </label>
-                    <input asp-for="ProfilePictureUrl" class="form-control"/>
+                    <input asp-for="ProfilePictureUrl" class="form-control" readonly/>
                     <span asp-validation-for="ProfilePictureUrl" class="text-danger"></span>
                  </div>
                  <div class="form-group">
                     <label asp-for="FirstName" class="control-label"> </label>
-                    <input asp-for="FirstName" class="form-control"/>
+                    <input asp-for="FirstName" class="form-control" readonly/>
                     <span asp-validation-for="FirstName" class="text-danger"></span>
                  </div>
                  <div class="form-group">
                     <label asp-for="LastName" class="control-label"> </label>
-                    <input asp-for="LastName" class="form-control"/>
+                    <input asp-for="LastName" class="form-control" readonly/>
                     <span asp-validation-for="LastName" class="text-danger"></span>
                  </div>
                  <div class="form-group">
                     <label asp-for="Phone" class="control-label"> </label>
-                    <input asp-for="Phone" class="form-control"/>
+                    <input asp-for="Phone" class="form-control" readonly/>
                     <span asp-validation-for="Phone" class="text-danger"></span>
                  </div>
                  <div class="form-group">
@@ -45,31 +43,28 @@
 
                  <div class="form-group">
                     <label asp-for="Password" class="control-label"> </label>
-                    <input asp-for="Password" class="form-control"/>
+                    <input asp-for="Password" class="form-control" readonly/>
                     <span asp-validation-for="Password" class="text-danger"></span>
                  </div>
 
 
                  <div class="form-group">
-                     <input type="submit" value="Create" class="btn btn-outline-success float-right"/>
+                     <a class="btn btn-outline-success floar-right" asp-action="Edit" asp-route-Username="@Model.UserName">Edit</a>
                      <a class="btn btn-outline-secondary" asp-action="Index"> Show All:</a>
                  </div>
-                 </form> 
+                 
              </div>
         </div>
     </div>
+</div>
 
-@section Scripts{
-    <script>
+    @section Scripts{
+        <script>
 
-        $(document).ready(function (){
-            var output = document.getElementById("ProfilePicturePreview");
-            output.src = $("# ProfilePictureUrl").val();
-        })
+    $(document).ready(function () {
+        var output = document.getElementById("ProfilePicturePreview");
+        output.src = $("# ProfilePictureUrl").val();
+    })
 
-        $("ProfilePictureUrl").on("change", function(){
-            var output = document.getElementById("ProfilePicturePreview");
-            output.src = $(this).val();
-        })
     </script>
 }
