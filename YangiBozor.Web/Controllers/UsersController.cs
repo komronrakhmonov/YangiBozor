@@ -18,5 +18,11 @@ namespace YangiBozor.Web.Controllers
             var Users = _userService.GetAllAsync(null);
             return View(Users);
         }
+        //Get: Users/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
     }
 }
