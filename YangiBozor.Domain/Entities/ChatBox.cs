@@ -8,5 +8,5 @@ public class ChatBox : Auditable
     public long UserId { get; set; }
     public User User { get; set; }
     public string Content { get; set; }
-    public MesseageType Type { get; set; }
+    public string RepliedContent { get; set; }
 }

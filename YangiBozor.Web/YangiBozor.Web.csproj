@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="unihei3w.htz~" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.4">
       <PrivateAssets>all</PrivateAssets>
@@ -25,6 +30,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\YangiBozor.Data\YangiBozor.Data.csproj" />
+    <ProjectReference Include="..\YangiBozor.Service\YangiBozor.Service.csproj" />
   </ItemGroup>
 
 </Project>
