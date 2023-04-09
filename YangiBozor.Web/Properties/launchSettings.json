@@ -29,6 +29,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
+      "launchUrl": "Products",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
