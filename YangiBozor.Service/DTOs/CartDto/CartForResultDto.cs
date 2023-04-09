@@ -1,4 +1,7 @@
-﻿namespace YangiBozor.Service.DTOs.CardDto;
+﻿using YangiBozor.Domain.Comons;
+using YangiBozor.Domain.Entities;
+
+namespace YangiBozor.Service.DTOs.CardDto;
 
 public class CardDorResultDto : Auditable
 {

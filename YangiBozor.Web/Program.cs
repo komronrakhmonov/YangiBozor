@@ -4,6 +4,7 @@ using YangiBozor.Data.IRepositories;
 using YangiBozor.Data.Repositories;
 using YangiBozor.Domain.Entities;
 using YangiBozor.Service.Mappers;
+using YangiBozor.Web.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,9 +13,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<YangiBozorDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-
-builder.Services.AddAutoMapper(typeof(MapperProfile))
+builder.Services.AddRepositories();
+builder.Services.AddServices();
+builder.Services.AddAutoMapper(typeof(MapperProfile));
 
 var app = builder.Build();
 

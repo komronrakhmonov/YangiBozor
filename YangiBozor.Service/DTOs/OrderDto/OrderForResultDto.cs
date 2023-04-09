@@ -1,4 +1,6 @@
-﻿using YangiBozor.Domain.Enums;
+﻿using YangiBozor.Domain.Comons;
+using YangiBozor.Domain.Entities;
+using YangiBozor.Domain.Enums;
 
 namespace YangiBozor.Service.DTOs.OrderDto;
 

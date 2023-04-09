@@ -12,7 +12,7 @@ using YangiBozor.Data.DbContexts;
 namespace YangiBozor.Data.Migrations
 {
     [DbContext(typeof(YangiBozorDbContext))]
-    [Migration("20230408064350_InitialMigration")]
+    [Migration("20230409015713_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -49,28 +49,6 @@ namespace YangiBozor.Data.Migrations
                     b.ToTable("Carts");
                 });
 
-            modelBuilder.Entity("YangiBozor.Domain.Entities.Category", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Categories");
-                });
-
             modelBuilder.Entity("YangiBozor.Domain.Entities.ChatBox", b =>
                 {
                     b.Property<long>("Id")
@@ -85,8 +63,8 @@ namespace YangiBozor.Data.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Type")
-                        .HasColumnType("int");
+                    b.Property<string>("RepliedContent")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -183,7 +161,7 @@ namespace YangiBozor.Data.Migrations
                     b.Property<long>("OrderId")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("PaymentTypeId")
+                    b.Property<int>("Type")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -201,28 +179,6 @@ namespace YangiBozor.Data.Migrations
                     b.ToTable("Payments");
                 });
 
-            modelBuilder.Entity("YangiBozor.Domain.Entities.PaymentType", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Type")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PaymentTypes");
-                });
-
             modelBuilder.Entity("YangiBozor.Domain.Entities.Product", b =>
                 {
                     b.Property<long>("Id")
@@ -233,9 +189,6 @@ namespace YangiBozor.Data.Migrations
 
                     b.Property<long?>("CartId")
                         .HasColumnType("bigint");
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -248,6 +201,9 @@ namespace YangiBozor.Data.Migrations
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");

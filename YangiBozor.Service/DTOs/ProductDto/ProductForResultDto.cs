@@ -1,4 +1,6 @@
-﻿namespace YangiBozor.Service.DTOs.ProductDto;
+﻿using YangiBozor.Domain.Comons;
+
+namespace YangiBozor.Service.DTOs.ProductDto;
 
 public class ProductForResultDto : Auditable
 {

@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace YangiBozor.Service.Exeptions
+namespace YangiBozor.Service.Exeptions;
+
+public class CustomExeption : Exception
 {
-    internal class CustomExeption
-    {
-    }
+    public int Code { get; set; }
+	public CustomExeption(int code, string messeage) : base(messeage)
+	{
+		this.Code = code;
+	}
 }

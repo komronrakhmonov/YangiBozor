@@ -1,4 +1,6 @@
-﻿namespace YangiBozor.Service.DTOs.UserDto;
+﻿using YangiBozor.Domain.Enums;
+
+namespace YangiBozor.Service.DTOs.UserDto;
 
 public class UserForCreationDto
 {
@@ -7,5 +9,5 @@ public class UserForCreationDto
     public string Phone { get; set; }
     public string UserName { get; set; }
     public string Password { get; set; }
-    public UserRole Role { get; set; }
+    public UserRole Role { get; set; } = UserRole.user;
 }

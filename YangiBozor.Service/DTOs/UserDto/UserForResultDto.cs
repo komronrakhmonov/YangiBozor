@@ -1,4 +1,7 @@
-﻿namespace YangiBozor.Service.DTOs.UserDto;
+﻿using YangiBozor.Domain.Comons;
+using YangiBozor.Domain.Enums;
+
+namespace YangiBozor.Service.DTOs.UserDto;
 
 public class UserForResultDto : Auditable
 {

@@ -1,4 +1,7 @@
-﻿namespace YangiBozor.Service.DTOs.OrderDto;
+﻿using YangiBozor.Domain.Entities;
+using YangiBozor.Domain.Enums;
+
+namespace YangiBozor.Service.DTOs.OrderDto;
 
 public class OrderForCreationDto
 {
