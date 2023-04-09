@@ -12,6 +12,6 @@ public interface IProductService
     Task<ProductForResultDto> UpdateAsync(Expression<Func<Product, bool>> predicate, ProductForCreationDto dto);
     Task<bool> DeleteAsync(Expression<Func<Product, bool>> predicate);
     Task<ProductForResultDto> GetAsync(Expression<Func<Product, bool>> predicate);
-    Task<IEnumerable<ProductForResultDto>> GetAllAsync(Expression<Func<Product, bool>> predicate);
+    IEnumerable<ProductForResultDto> GetAllAsync(Expression<Func<Product, bool>> predicate);
 }
 
