@@ -1,0 +1,69 @@
+﻿
+@using YangiBozor.Service.DTOs.UserDto
+@model IEnumerable<UserForResultDto>
+
+
+@*Define ViewData*@
+
+@{
+    ViewData["Title"] = "List of Users";
+}
+
+@*
+Write code*@
+
+
+<div class=" = " row">
+    <div class="col-md-8 offset-md-2">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Profile Picture</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    @*<th>@Html.DisplayNameFor(model => model.LastName)</th>*@
+                    <th>Phone Number</th>
+                    <th>User Name</th>
+                    @*<th>Password</th>*@
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td class="align-middle">
+                                <img class="rounded-circle" src="@item.ProfilePhotoUrl" alt="@item.FirstName" style="max-width: 150px" />
+                            </td>
+                            <td class="align-middle">
+                                @Html.DisplayFor(modelItem => item.FirstName)
+                            </td>
+                            <td class="align-middle">
+                                @Html.DisplayFor(modelItem => item.LastName)
+                            </td>
+                            <td class="align-middle">
+                                @Html.DisplayFor(modelItem => item.Phone)
+                            </td>
+                            <td class="align-middle">
+                                @Html.DisplayFor(modelItem => item.UserName)
+                            </td>
+                            @*<td class="align-middle">
+                                @Html.DisplayFor(modelItem => item.Password)
+                            </td>*@
+                            <td class="align-middle">
+                                <a class="btn btn-outline-primary text-black"> <i class="bi bi-pencil-square"></i>Edit </a>
+                                <a class="btn btn-outline-info text-black"> <i class="bi bi-eye"></i>Details </a>
+                                <a class="btn btn-outline-danger text-black"> <i class="bi bi-trash"></i>Delete </a>
+                            </td>
+
+                        </tr>
+                    }
+                
+                </tbody>
+        </table>
+
+    </div>

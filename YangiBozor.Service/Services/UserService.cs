@@ -43,7 +43,7 @@ public class UserService : IUserService
         return true;
     }
 
-    public async Task<IEnumerable<UserForResultDto>> GetAllAsync(Expression<Func<User, bool>> predicate)
+    public IEnumerable<UserForResultDto> GetAllAsync(Expression<Func<User, bool>> predicate)
     {
         var users = userRepository.SelectAllAsync();
         users = predicate != null ? users.Where(predicate) : users;
