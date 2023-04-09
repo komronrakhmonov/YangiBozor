@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using YangiBozor.Domain.Entities;
 
-namespace YangiBozor.Service.DTOs.ChatBoxDto
+namespace YangiBozor.Service.DTOs.ChatBoxDto;
+
+public class ChatBoxForCreationDto
 {
-    internal class ChatBoxForCreationDto
-    {
-    }
+    public long UserId { get; set; }
+    public string Content { get; set; }
+    public string RepliedContent { get; set; }
 }
