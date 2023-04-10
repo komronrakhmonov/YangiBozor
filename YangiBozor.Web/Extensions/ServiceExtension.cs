@@ -17,8 +17,7 @@ public static class ServiceExtension
     public static void AddServices(this IServiceCollection services)
     {
         services.AddScoped<IUserService, UserService>();
-        //services.AddScoped<IProductService, ProductService>();
-        //services.AddScoped<IOrderService, OrderService>();
-        //services.AddScoped<IPaymentService, PaymentService>();
+        services.AddScoped<IProductService, ProductService>();
+        services.AddScoped<IPaymentService, PaymentService>();
     }
 }

@@ -42,7 +42,7 @@ public class ProductService : IProductService
         return true;
     }
 
-    public async Task<IEnumerable<ProductForResultDto>> GetAllAsync(Expression<Func<Product, bool>> predicate)
+    public IEnumerable<ProductForResultDto> GetAllAsync(Expression<Func<Product, bool>> predicate)
     {
         var products = productRepository.SelectAllAsync();
         products = predicate != null ? products.Where(predicate) : products;
