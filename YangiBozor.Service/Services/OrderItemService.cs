@@ -45,14 +45,14 @@ public class OrderItemService : IOrderItemService
         return true;
     }
 
-    public Task<IEnumerable<OrderItemForResult>> GetAllAsync(Expression<Func<OrderItem, bool>> predicate)
+    public async Task<IEnumerable<OrderItemForResult>> GetAllAsync(Expression<Func<OrderItem, bool>> predicate)
     {
         var items = repository.SelectAllAsync();
         items = predicate != null ? items.Where(predicate) : items;
         return mapper.Map<IEnumerable<OrderItemForResult>>(items);
     }
 
-    public Task<OrderItemForResult> GetAsync(Expression<Func<OrderItem, bool>> predicate)
+    public async Task<OrderItemForResult> GetAsync(Expression<Func<OrderItem, bool>> predicate)
     {
         var item = repository.SelectAsync(predicate);
         if (item is null) throw new CustomExeption(404, "Not Found!");

@@ -43,7 +43,7 @@ public class OrderService : IOrderService
         return true;
     }
 
-    public Task<IEnumerable<OrderForResultDto>> GetAllAsync(Expression<Func<Order, bool>> predicate)
+    public async Task<IEnumerable<OrderForResultDto>> GetAllAsync(Expression<Func<Order, bool>> predicate)
     {
         var orders = orderRepository.SelectAllAsync();
         orders = predicate != null ? orders.Where(predicate) : orders;
