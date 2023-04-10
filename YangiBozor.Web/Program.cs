@@ -1,10 +1,4 @@
-using Microsoft.EntityFrameworkCore;
-using NBU.Data;
-using YangiBozor.Data.DbContexts;
-using YangiBozor.Data.IRepositories;
-using YangiBozor.Data.Repositories;
-using YangiBozor.Domain.Entities;
-using YangiBozor.Service.Mappers;
+
 using YangiBozor.Web.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);

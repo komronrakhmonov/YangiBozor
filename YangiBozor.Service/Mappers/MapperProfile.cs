@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using YangiBozor.Domain.Entities;
-using YangiBozor.Service.DTOs.ProductDto;
+
 using YangiBozor.Service.DTOs.UserDto;
 
 namespace YangiBozor.Service.Mappers;
@@ -11,6 +11,16 @@ public class MapperProfile : Profile
 	{
 		CreateMap<User, UserForCreationDto>().ReverseMap();
 		CreateMap<User, UserForResultDto>().ReverseMap();
-		CreateMap<Product, ProductForResultDto>().ReverseMap();
+
+
+		CreateMap<OrderItem, OrderItemForCreationDto>().ReverseMap();
+		CreateMap<OrderItemForResult,OrderItem>().ReverseMap();
+
+		CreateMap<OrderForCreationDto, Order>().ReverseMap();
+		CreateMap<OrderForResultDto, Order>().ReverseMap();
+
+		CreateMap<ChatBoxForCreationDto, ChatBox>().ReverseMap();
+		CreateMap<ChatBoxForResultDto, ChatBox>().ReverseMap();
+
 	}
 }
