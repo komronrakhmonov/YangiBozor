@@ -5,6 +5,7 @@ namespace YangiBozor.Domain.Entities;
 
 public class Product : Auditable
 {
+    public string ProductPhotoUrl { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }
     public CategoryType Type { get; set; }

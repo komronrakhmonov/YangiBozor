@@ -9,11 +9,11 @@ using YangiBozor.Data.DbContexts;
 
 #nullable disable
 
-namespace YangiBozor.Data.Migrations
+namespace YangiBozor.Web.Migrations
 {
     [DbContext(typeof(YangiBozorDbContext))]
-    [Migration("20230409015713_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20230409151232_fixedMigration")]
+    partial class fixedMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -202,6 +202,9 @@ namespace YangiBozor.Data.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("ProductPhotoUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Type")
                         .HasColumnType("int");
 
@@ -236,6 +239,9 @@ namespace YangiBozor.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProfilePhotoUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Role")

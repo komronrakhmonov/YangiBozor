@@ -10,5 +10,5 @@ public interface IUserService
     Task<UserForResultDto> UpdateAsync(Expression<Func<User, bool>> predicate, UserForCreationDto dto);
     Task<bool> DeleteAsync(Expression<Func<User, bool>> predicate);
     Task<UserForResultDto> GetAsync(Expression<Func<User, bool>> predicate);
-    Task<IEnumerable<UserForResultDto>> GetAllAsync(Expression<Func<User, bool>> predicate);
+    IEnumerable<UserForResultDto> GetAllAsync(Expression<Func<User, bool>> predicate);
 }

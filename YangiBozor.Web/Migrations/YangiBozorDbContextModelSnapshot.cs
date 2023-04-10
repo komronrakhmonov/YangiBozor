@@ -8,7 +8,7 @@ using YangiBozor.Data.DbContexts;
 
 #nullable disable
 
-namespace YangiBozor.Data.Migrations
+namespace YangiBozor.Web.Migrations
 {
     [DbContext(typeof(YangiBozorDbContext))]
     partial class YangiBozorDbContextModelSnapshot : ModelSnapshot
@@ -199,6 +199,9 @@ namespace YangiBozor.Data.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("ProductPhotoUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Type")
                         .HasColumnType("int");
 
@@ -233,6 +236,9 @@ namespace YangiBozor.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProfilePhotoUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Role")

@@ -5,6 +5,7 @@ namespace YangiBozor.Domain.Entities;
 
 public class User : Auditable
 {
+    public string ProfilePhotoUrl { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set;  }
     public string Phone { get; set;  }

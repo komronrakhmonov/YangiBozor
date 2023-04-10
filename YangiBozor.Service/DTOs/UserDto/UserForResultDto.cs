@@ -5,6 +5,7 @@ namespace YangiBozor.Service.DTOs.UserDto;
 
 public class UserForResultDto : Auditable
 {
+    public string ProfilePhotoUrl { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string Phone { get; set; }
