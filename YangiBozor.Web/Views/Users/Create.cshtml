@@ -1,0 +1,74 @@
+﻿@using YangiBozor.Service.DTOs.UserDto;
+@model UserForCreationDto
+
+@{
+    ViewData["Title"] = "Add a new User";
+}
+
+<div class="row text"
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1>Add a new User</h1>
+        </p>
+        <div class="row">
+             <div class="col-md-8 offset-2">
+                 <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class = "text-danger"></div>
+                 </form> 
+
+                 <div class=" form-group text-center">
+                     <img id="ProfilePicturePreview" />
+                 </div>
+                 <div class="form-group">
+                    <label asp-for="ProfilePictureUrl" class="control-label"> </label>
+                    <input asp-for="ProfilePictureUrl" class="form-control"/>
+                    <span asp-validation-for="ProfilePictureUrl" class="text-danger"></span>
+                 </div>
+                 <div class="form-group">
+                    <label asp-for="FirstName" class="control-label"> </label>
+                    <input asp-for="FirstName" class="form-control"/>
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                 </div>
+                 <div class="form-group">
+                    <label asp-for="LastName" class="control-label"> </label>
+                    <input asp-for="LastName" class="form-control"/>
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                 </div>
+                 <div class="form-group">
+                    <label asp-for="Phone" class="control-label"> </label>
+                    <input asp-for="Phone" class="form-control"/>
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                 </div>
+                 <div class="form-group">
+                    <label asp-for="UserName" class="control-label"> </label>
+                    <input asp-for="UserName" class="form-control"/>
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                 </div>
+                 <div class="form-group">
+                    <label asp-for="UserName" class="control-label"> </label>
+                    <input asp-for="UserName" class="form-control"/>
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                 </div>
+                 <div class="form-group">
+                    <label asp-for="Password" class="control-label"> </label>
+                    <input asp-for="Password" class="form-control"/>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                 </div>
+                 
+
+                 <div class="form-group">
+                     <input type="submit" value="Create" class="btn btn-outline-success float-right"/>
+                     <a class="btn btn-outline-secondary" asp-action="Index"> Show All:</a>
+                 </div>
+             </div>
+        </div>
+    </div>
+
+@section Scripts{
+    <script>
+        $("ProfilePictureUrl").on("change", function(){
+            var output = document.getElementById("ProfilePicturePreview");
+            output.src = $(this).val();
+        })
+    </script>
+}

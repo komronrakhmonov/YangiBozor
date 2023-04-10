@@ -4,6 +4,7 @@ namespace YangiBozor.Service.DTOs.UserDto;
 
 public class UserForCreationDto
 {
+    public string ProfilePictureUrl { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string Phone { get; set; }
